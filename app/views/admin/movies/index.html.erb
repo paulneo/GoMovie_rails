@@ -36,8 +36,9 @@
             <td><%= movie.gender %></td>
             <td>S/.<%= movie.price %></td>
             <td >
-              <a class="white-text " href="#modal4" data-activates="modal4"  ><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
-              <a class="white-text " href="#"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+              <%=link_to 'Editar' , edit_admin_movie_path(movie) %>
+              <%=link_to 'Ver' , admin_movie_path(movie) %>
+              <%=link_to 'Eliminar' ,admin_movie_path(movie), method: :delete,"data-confirm": "¿Estas seguro?" %>
             </td>
           </tr>
         <%end%>

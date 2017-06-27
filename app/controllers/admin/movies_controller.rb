@@ -1,7 +1,6 @@
 class Admin::MoviesController < ApplicationController
   def index
     @movies = Movie.all
-
   end
   def show
     @movie = Movie.find(params[:id])
@@ -16,6 +15,20 @@ class Admin::MoviesController < ApplicationController
     else
       render new_admin_movie_path
     end
+  end
+  def update
+    @movie = Movie.find(params[:id])
+    if @movie.update movie_params
+      redirect_to admin_movies_path
+    else
+      render edit_admin_movie_path
+    end
+  end
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    redirect_to admin_movies_path
+
   end
   private
 
