@@ -1,23 +1,3 @@
-<div id="modal2" class="modal">
-  <div class="  modal-content ">
-    <form >
-      <p>
-         <input type="radio" id="test6"  name="pago" />
-         <label for="test6">1 dia  -    S/. 0.99</label>
-       </p>
-       <p>
-         <input type="radio" id="test7"  name="pago"  />
-         <label for="test7">1 semana   -    S/. 2.99</label>
-       </p>
-       <p>
-         <input type="radio" id="test8" name="pago" />
-         <label for="test8">2 semana   -    S/. 3.99</label>
-       </p>
-    </form>
-  </div>
-  <div class="modal-footer">
-     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
- </div>
 </div>
 <div class=" center" >
   <div style="height:100%" class="  valign-demo black white-text" href="#one!">
@@ -25,11 +5,11 @@
       <div class=" col s12 m6 hide-on-small-only" >
         <P><%= @movie.name %></P>
         <p class="white-text"><%= @movie.sinopsys %></p>
-          <a  href="#modal2" data-activates="modal2" class="waves-effect waves-light btn indigo">Alquilar</a>
+        <%= link_to "Alquilar", rent_movies_path(id_movie: @movie.id), class:"waves-effect waves-light btn indigo", method: :post %>
       </div>
       <div class="container col s12 m6 ">
         <div class="">
-          <%= <%= image_tag @movie.image) %> %>
+          <%= image_tag @movie.image.url %>
         </div>
         <div class="left">
           <p ><%= @movie.price%></>

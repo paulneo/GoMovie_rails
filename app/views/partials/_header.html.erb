@@ -60,7 +60,9 @@
       <% if user_signed_in? %>
         <li><a href="">Mis peliculas</a></li>
         <li><a href="#modal3" data-activates="modal3"  href="#!">editar</a></li>
-        <li><a href="#!">estado de cuenta</a></li>
+        <li>
+          <%= link_to 'Estado de cuenta', rent_movies_path %>
+        </li>
         <li><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete%></li>
       <%end%>
 
