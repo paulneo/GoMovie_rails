@@ -1,0 +1,25 @@
+<div class="container">
+  <div>
+    <table class="white-text responsive-table ">
+      <thead>
+        <tr >
+          <th>#</th>
+          <th>Nombre</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%@categories.each do |category| %>
+          <tr>
+            <td><%= category.id %></td>
+            <td><%= category.name %></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
+  <div class="margin-top-20">
+    <%= link_to 'Agregar', new_admin_category_path, class: "right waves-effect waves-light btn indigo" %>
+  </div>
+
+</div>

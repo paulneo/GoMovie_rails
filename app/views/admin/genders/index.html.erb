@@ -1,0 +1,24 @@
+<div class="container">
+  <div>
+    <table class="white-text responsive-table ">
+      <thead>
+        <tr >
+          <th>#</th>
+          <th>Nombre</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%@genders.each do |gender| %>
+          <tr>
+            <td><%= gender.id %></td>
+            <td><%= gender.name %></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
+  <div class="margin-top-20">
+    <%= link_to 'Agregar', new_admin_gender_path, class: "right waves-effect waves-light btn indigo" %>
+  </div>
+</div>

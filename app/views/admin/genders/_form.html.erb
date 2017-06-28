@@ -1,0 +1,9 @@
+<%= form_for @gender, url: admin_genders_path do |f| %>
+  <div class="input-field col s12 m12 l12 ">
+    <%=f.text_field :name , id:'name' ,class:'validate'  %>
+    <%= f.label :name, "Nombre"%>
+  </div>
+  <div class="col s12 m12 l12">
+    <%= f.submit "Enviar", class:'waves-effect waves-light btn indigo'%>
+  </div>
+<%end%>
