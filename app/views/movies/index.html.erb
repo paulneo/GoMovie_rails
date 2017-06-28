@@ -114,10 +114,10 @@
         <div class = "col s6 m4 l2 ">
           <div class="card">
             <div class="card-image">
-              <a ><%= movie.image %>  </a>
+              <%= image_tag movie.image.url %> 
             </div>
             <div class="card-action ">
-              <%= link_to movie.name , movie %> 
+              <%= link_to movie.name , movie %>
             </div>
           </div>
         </div>

@@ -16,6 +16,9 @@ class Admin::MoviesController < ApplicationController
       render new_admin_movie_path
     end
   end
+  def edit
+    @movie =Movie.find(params[:id])
+  end
   def update
     @movie = Movie.find(params[:id])
     if @movie.update movie_params
