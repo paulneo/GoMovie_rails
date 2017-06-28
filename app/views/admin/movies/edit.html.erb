@@ -1,8 +1,8 @@
 <div class="container">
   <div style="background:white; "class=" padding-20 center margin-top-20 ">
     <div class="row ">
-      <%= render 'form'%>
-        
+      <%= render 'form', {url: admin_movie_path(@movie.id), method: :patch}%>
+
     </div>
   </div>
 </div>

@@ -13,7 +13,7 @@ class Admin::MoviesController < ApplicationController
     if @movie.save
       redirect_to admin_movies_path
     else
-      render new_admin_movie_path
+      render :new
     end
   end
   def edit
@@ -24,7 +24,7 @@ class Admin::MoviesController < ApplicationController
     if @movie.update movie_params
       redirect_to admin_movies_path
     else
-      render edit_admin_movie_path
+      render :edit
     end
   end
   def destroy
@@ -36,6 +36,6 @@ class Admin::MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:name,:star,:category,:gender,:price,:sinopsys,:time,:image)
+    params.require(:movie).permit(:name,:star,:category_id,:gender_id,:price,:sinopsys,:time,:image)
   end
 end

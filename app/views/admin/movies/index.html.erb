@@ -32,8 +32,8 @@
           <tr>
             <td><%= movie.id %></td>
             <td><%= movie.name %></td>
-            <td><%= movie.category %></td>
-            <td><%= movie.gender %></td>
+            <td><%= movie.category.name %></td>
+            <td><%= movie.gender.name %></td>
             <td>S/.<%= movie.price %></td>
             <td >
               <%=link_to 'Editar' , edit_admin_movie_path(movie) %>
