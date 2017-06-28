@@ -27,8 +27,8 @@ class Admin::MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
+    flash[:notice] = "Se borro correctamente"
     redirect_to admin_movies_path
-
   end
   private
 

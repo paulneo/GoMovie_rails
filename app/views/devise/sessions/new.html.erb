@@ -1,0 +1,33 @@
+
+<div class="container table ">
+  <div class="centrar" >
+    <div class="card card-white">
+      <div class="text-aling">
+      </div>
+      <div  class="formulario ">
+        <div class="row ">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="input-field col s12 m12 l12">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true %>
+            </div>
+            <div class="input-field col s12 m12 l12">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "off" %>
+            </div>
+            <% if devise_mapping.rememberable? -%>
+              <div class="input-field col s12 m12 l12">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end -%>
+            <div class="actions col s12 m12 l12 padding-top-20px">
+              <%= f.submit "Ingresar" ,class:"right waves-effect waves-light btn indigo width-100 " %>
+            </div>
+          <% end %>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
