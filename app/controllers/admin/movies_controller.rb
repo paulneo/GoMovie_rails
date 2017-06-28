@@ -1,6 +1,10 @@
 class Admin::MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    if params[:q]
+      @movies = Movie.search(params[:q]).order("created_at DESC")
+    else
+      @movies = Movie.all
+    end
   end
   def show
     @movie = Movie.find(params[:id])

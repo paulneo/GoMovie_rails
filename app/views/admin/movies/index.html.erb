@@ -3,11 +3,14 @@
     <div class="row">
       <form class="col s12">
         <div class="row">
-          <div class="input-field col s6">
-            <i class="material-icons prefix">search</i>
-            <input id="icon_prefix" type="text" class="validate">
-            <label for="icon_prefix">First Name</label>
-          </div>
+          <%= form_tag(admin_movies_path, :method => "get") do %>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">search</i>
+              <%= text_field_tag :q, params[:q], placeholder: "Buscar Pelicula" %>
+              <label for="icon_prefix">Nombre de pelicula</label>
+              <%= submit_tag "Buscar", class: "waves-effect waves-light btn indigo" %>
+            </div>
+          <% end %>
         </div>
       </form>
     </div>
